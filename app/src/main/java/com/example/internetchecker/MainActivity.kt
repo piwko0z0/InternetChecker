@@ -14,6 +14,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import android.content.Intent
+import android.net.Uri
 import java.util.concurrent.TimeUnit
 
 data class SiteResult(val url: String, val success: Boolean)
@@ -68,16 +70,28 @@ class MainActivity : AppCompatActivity() {
         btnCheck = findViewById(R.id.btnCheck)
         btnLogs = findViewById(R.id.btnLogs)
 
+        // Находим нашу новую подпись автора
+        val tvAuthor = findViewById<TextView>(R.id.tvAuthor)
+
+        // Обработка нажатия на кнопку сканера
         btnCheck.setOnClickListener {
             btnCheck.isEnabled = false
             allResults.clear()
             tvStatus.text = "[ЗАПУСК СКАНИРОВАНИЯ СЕТИ...]\n[ГЕНЕРАЦИЯ ПАКЕТОВ...]\n[ОЖИДАНИЕ ОТВЕТА...]"
-
             performCheck()
         }
 
+        // Обработка нажатия на логи
         btnLogs.setOnClickListener {
             showLogsDialog()
+        }
+
+        // Обработка нажатия на ссылку GitHub
+        tvAuthor.setOnClickListener {
+            // ВАЖНО: Замените ссылку ниже на ссылку вашего профиля GitHub!
+            val url = "https://github.com/piwko0z0"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
         }
     }
 

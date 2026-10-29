@@ -7,16 +7,16 @@
     android:background="#0A0A0A"
     android:gravity="center_vertical">
 
-    <!-- Заголовок с вашим ником -->
+    <!-- Английский заголовок -->
     <TextView
-        android:layout_width="319dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="30dp"
-        android:fontFamily="monospace"
-        android:text="SYSTEM DIAGNOSTIC\ncreated by Genko(piwko0_0)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INTERNET CHECKER"
         android:textColor="#FCEE0A"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="30dp" />
 
     <!-- Главная кнопка -->
     <Button
@@ -31,7 +31,7 @@
         android:fontFamily="monospace"
         android:layout_marginBottom="30dp" />
 
-    <!-- Поле для вывода результата (тут был пропущен id) -->
+    <!-- Поле вывода статуса -->
     <TextView
         android:id="@+id/tvStatus"
         android:layout_width="match_parent"
@@ -43,16 +43,37 @@
         android:fontFamily="monospace"
         android:lineSpacingExtra="6dp" />
 
-    <!-- Кнопка логов -->
-    <Button
-        android:id="@+id/btnLogs"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_gravity="end"
-        android:backgroundTint="#1A1A1A"
-        android:text="[ ПОКАЗАТЬ ЛОГИ ]"
-        android:textColor="#FCEE0A"
-        android:textSize="12sp"
-        android:fontFamily="monospace" />
+    <!-- Нижняя панель: Ссылка на GitHub слева, кнопка логов справа -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp">
+
+        <!-- Кликабельная подпись автора -->
+        <TextView
+            android:id="@+id/tvAuthor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="by GenKo(piwko0_0)"
+            android:textColor="#888888"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:padding="8dp" />
+
+        <!-- Кнопка логов -->
+        <Button
+            android:id="@+id/btnLogs"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="#1A1A1A"
+            android:text="[ ЛОГИ ]"
+            android:textColor="#FCEE0A"
+            android:textSize="12sp"
+            android:fontFamily="monospace" />
+
+    </LinearLayout>
 
 </LinearLayout>
