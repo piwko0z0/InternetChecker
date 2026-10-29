@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.InternetChecker" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Делаем фон всего окна черным (как в Киберпанке) -->
+        <item name="android:windowBackground">#0A0A0A</item>
+        <!-- Красим системную строку сверху (где батарея и часы) в черный -->
+        <item name="android:statusBarColor">#0A0A0A</item>
+        <!-- Делаем иконки батареи и часов белыми, чтобы они не сливались с черным фоном -->
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Theme.InternetChecker" parent="Base.Theme.InternetChecker" />
+</resources>
